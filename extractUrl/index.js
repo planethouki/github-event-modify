@@ -1,9 +1,9 @@
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
 
-    if ((req.body && req.body.name)) {
+    if (req.body) {
         
-        const mailText = req.body.mailBody;
+        const mailText = req.body;
         const searchTerm = '<script type="application/json" data-scope="inboxmarkup">';
         let output = "";
         if (mailText.includes(searchTerm)) {
