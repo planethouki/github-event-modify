@@ -15,7 +15,10 @@ module.exports = async function (context, req) {
         }
         context.res = {
             // status: 200, /* Defaults to 200 */
-            body: output
+            body: output,
+            headers: {
+                'Content-Type': 'text/plain'
+            }
         };
     }
     else {
