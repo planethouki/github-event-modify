@@ -103,6 +103,7 @@ function eventParse(event) {
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
     
+    const date = new Date(Date.now() - 3600*1000);
     const prefix = date.getUTCFullYear() + "-" + 
         (date.getUTCMonth() + 1) + "-" + 
         date.getUTCDate() + "T" + 
