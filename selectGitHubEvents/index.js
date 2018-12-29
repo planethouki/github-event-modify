@@ -113,13 +113,16 @@ module.exports = async function (context, req) {
         const events = req.body;
         context.res = {
             // status: 200, /* Defaults to 200 */
+            headers: {
+                'Content-Type': 'application/json'
+            },
             // body: events.map(eventParse)
             body: events.filter(event => event.created_at.startsWith(prefix)).map(eventParse)
         };
     } else {
         context.res = {
             status: 400,
-            body: "Please pass a name on the query string or in the request body"
+            body: "Please pass body"
         };
     }
 };
