@@ -107,7 +107,7 @@ module.exports = async function (context, req) {
     const prefix = date.getUTCFullYear() + "-" + 
         (date.getUTCMonth() + 1) + "-" + 
         date.getUTCDate() + "T" + 
-        "0".concat(date.getUTCHours()).substring(-2);
+        "0".concat(date.getUTCHours()).substr(-2);
 
     if (req.body && req.body.length > 0) {
         const events = req.body;
