@@ -3,8 +3,8 @@ module.exports = async function (context, req) {
     
     const date = new Date(Date.now() - 3600*1000);
     const prefix = date.getUTCFullYear() + "-" + 
-        (date.getUTCMonth() + 1) + "-" + 
-        date.getUTCDate() + "T" + 
+        "0".concat((date.getUTCMonth() + 1)).substr(-2) + "-" + 
+        "0".concat(date.getUTCDate()).substr(-2) + "T" + 
         "0".concat(date.getUTCHours()).substr(-2);
 
     if (req.body && req.body.length > 0) {
