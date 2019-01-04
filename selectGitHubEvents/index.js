@@ -6,6 +6,7 @@ module.exports = async function (context, req) {
         "0".concat((date.getUTCMonth() + 1)).substr(-2) + "-" + 
         "0".concat(date.getUTCDate()).substr(-2) + "T" + 
         "0".concat(date.getUTCHours()).substr(-2);
+    context.log(`prefix: ${prefix}`);
 
     if (req.body && req.body.length > 0) {
         const events = req.body;
