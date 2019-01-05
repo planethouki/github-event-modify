@@ -1,5 +1,5 @@
 {
-  "name": "github-url-extract",
+  "name": "github-event-notify",
   "version": "1.0.0",
   "description": "GitHubをWatchする。通知メールが来る。その通知メールからURLを抜き出す関数。Azure Functions仕様。",
   "main": "index.js",
@@ -8,15 +8,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/planethouki/github-url-extract.git"
+    "url": "git+https://github.com/planethouki/github-event-notify.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/planethouki/github-url-extract/issues"
+    "url": "https://github.com/planethouki/github-event-notify/issues"
   },
-  "homepage": "https://github.com/planethouki/github-url-extract#readme",
+  "homepage": "https://github.com/planethouki/github-event-notify#readme",
   "devDependencies": {
     "chai": "^4.2.0",
     "mocha": "^5.2.0",
