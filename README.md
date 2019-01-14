@@ -1,4 +1,4 @@
-# github-event-notify
+# github-event-modify
 
 for GitHub Watch
 
