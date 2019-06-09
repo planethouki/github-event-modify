@@ -99,6 +99,20 @@ function eventParse(event) {
     }
     return description;
 }
+function eventParseMin(event) {
+    let description = "";
+    switch (event.type) {
+        case "CreateEvent":
+        description = `${event.payload.ref_type}が作成されました `;
+        description += event.repo.url.replace("api.github.com/repos", "github.com");
+        break;
+        case "ReleaseEvent":
+        description = "Releaseがありました ";
+        description += event.payload.release.html_url + " ";
+        break;
+    }
+    return description;
+}
 
 module.exports = async function (context, req) {
     context.log('JavaScript HTTP trigger function processed a request.');
@@ -110,7 +124,7 @@ module.exports = async function (context, req) {
             headers: {
                 'Content-Type': 'application/json'
             },
-            body: events.map(eventParse)
+            body: events.map(eventParseMin).filter((discription) => { discription.length > 0 })
         };
     } else {
         context.res = {
